@@ -116,6 +116,13 @@ IRrecv::IRrecv (int recvpin, int blinkpin)
 }
 
 
+void IRrecv::disableIRIn ( )
+{
+	#ifdef ESP32
+		timerAlarmDisable(timer);
+	#endif
+}
+
 
 //+=============================================================================
 // initialization
